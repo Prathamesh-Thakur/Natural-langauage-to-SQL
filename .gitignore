@@ -1,0 +1,6 @@
+.env
+schemas.txt
+myenv
+__pycache__
+data
+temp_data
