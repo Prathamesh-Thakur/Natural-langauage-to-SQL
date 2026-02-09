@@ -76,21 +76,19 @@ Text-to-SQL/
    ```
 
 3. **Install dependencies**
-   
-   For both agents (recommended):
    ```bash
-   pip install -r groq_api/requirements.txt
-   pip install -r llamaindex/requirements.txt
+   pip install -r requirements.txt
    ```
    
-   Or individually:
-   ```bash
-   # For Groq Agent V1
-   pip install streamlit groq pandas python-dotenv
-   
-   # For LlamaIndex Agent V2
-   pip install streamlit llama-index llama-index-llms-groq llama-index-embeddings-huggingface sqlalchemy
-   ```
+   This installs all required packages for both agents:
+   - pandas
+   - dotenv
+   - streamlit
+   - groq
+   - llama-index
+   - llama-index-llms-groq
+   - llama-index-embeddings-huggingface
+   - sqlalchemy
 
 4. **Set up environment variables**
    
