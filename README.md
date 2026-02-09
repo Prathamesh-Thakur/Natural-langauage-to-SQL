@@ -23,14 +23,15 @@ This application provides a Streamlit-based interface for analyzing data through
 Text-to-SQL/
 ├── app.py                          # Main Streamlit application entry point
 ├── utils.py                        # Utility functions for file handling and database conversion
+├── requirements.txt                # Project dependencies
+├── LICENSE                         # License file
+├── README.md                       # Project documentation
 ├── groq_api/                       # Groq API-based agent (Manual)
 │   ├── groq_app.py                # Streamlit UI for Groq agent
-│   ├── sql_gen.py                 # SQL generation and query execution logic
-│   └── requirements.txt            # Groq agent dependencies
+│   └── sql_gen.py                 # SQL generation and query execution logic
 ├── llamaindex/                    # LlamaIndex-based agent (Autonomous)
 │   ├── llamaindex_app.py          # Streamlit UI for LlamaIndex agent
-│   ├── llama_gen.py               # LlamaIndex engine initialization and response
-│   └── requirements.txt            # LlamaIndex agent dependencies
+│   └── llama_gen.py               # LlamaIndex engine initialization and response
 ├── data/                          # Sample data directory
 ├── temp_data/                     # Temporary storage for uploaded files
 └── myenv/                         # Python virtual environment
