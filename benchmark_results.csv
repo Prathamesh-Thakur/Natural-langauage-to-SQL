@@ -1,0 +1,11 @@
+Question,Latency (s),Execution,Generated SQL
+How many total tracks are in the database?,2.38,Pass,SELECT COUNT(TrackId) FROM Track
+What are the names of all the genres?,1.26,Pass,SELECT Name FROM Genre
+List the top 5 longest tracks.,1.47,Pass,"SELECT TrackId, Name, Milliseconds FROM Track ORDER BY Milliseconds DESC LIMIT 5"
+Who is the manager of employee Jane Peacock?,0.94,Pass,"SELECT T2.FirstName, T2.LastName FROM Employee AS T1 INNER JOIN Employee AS T2 ON T1.ReportsTo = T2.EmployeeId WHERE T1.FirstName = 'Jane' AND T1.LastName = 'Peacock'"
+How many tracks does the album 'Restless and Wild' have?,1.18,Pass,SELECT COUNT(T.TrackId) FROM Track T INNER JOIN Album A ON T.AlbumId = A.AlbumId WHERE A.Title = 'Restless and Wild'
+Which artist has the most albums?,0.95,Pass,"SELECT Artist.Name, COUNT(Album.AlbumId) as NumAlbums FROM Album INNER JOIN Artist ON Album.ArtistId = Artist.ArtistId GROUP BY Artist.Name ORDER BY NumAlbums DESC LIMIT 1"
+Show me the total sales (invoice lines) for the track 'The Trooper'.,1.05,Pass,SELECT SUM(InvoiceLine.UnitPrice * InvoiceLine.Quantity) AS TotalSales FROM InvoiceLine INNER JOIN Track ON InvoiceLine.TrackId = Track.TrackId WHERE Track.Name = 'The Trooper'
+Which customer has spent the most money in total?,0.97,Pass,"SELECT Customer.FirstName, Customer.LastName, SUM(Invoice.Total) AS TotalSpent FROM Customer JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId GROUP BY Customer.CustomerId ORDER BY TotalSpent DESC LIMIT 1"
+What is the most popular genre by total tracks sold?,1.14,Pass,"SELECT G.Name, COUNT(T.TrackId) as TotalTracks FROM Genre G JOIN Track T ON G.GenreId = T.GenreId GROUP BY G.Name ORDER BY TotalTracks DESC"
+List all employees who have never supported a customer.,1.32,Pass,"SELECT EmployeeId, FirstName, LastName FROM Employee WHERE EmployeeId NOT IN (SELECT SupportRepId FROM Customer)"
